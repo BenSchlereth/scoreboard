@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1473272000 source:/home/pi/Documents/c/example/main.c
+	<wiringPi.h>
+	<lcd.h>
+
