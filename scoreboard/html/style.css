@@ -5,69 +5,68 @@ body {
   line-height: 1.6;
 }
 
-h2 {
+h1 {
+
   border-top: 4px solid #eee;
-  padding-top: 40px;
-  margin-top: 40px;
+  padding-top: 10px;
+  margin-top: 30px;
+	text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+
 }
 
-h2 span {
+h2 {
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+	text-align: center;
+	color: red;
+}
+
+h3 {
   font-family: georgia, serif;
   font-style: italic;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: normal;
-  color: #999;
-  display: inline-block;
-  margin-left: 10px;
+  text-align: center;
   margin-top: 5px;
-  text-transform: lowercase;
 }
+
+
 
 p {
   color: #666;
+	text-align: center;
 }
 
 .boxes {
-  height: 50px;
-  margin-bottom: 20px;
+	text-align: center;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 300;
+	top: 300px;
 }
 
-.box {
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  line-height: 50px;
-  border-radius: 3px;
-  margin-right: 20px;
-  color: #fff;
-  font-size: 24px;
-  font-weight: 300;
-  float: left;
-  background-color: hsla(44, 85%, 58%, 1);
-  position: relative;
-}
+
 
 .box:nth-child(1) {
-  background-color: hsla(40, 85%, 58%, 1);
+  background-color: green;
+	position: absolute;	
+	left: 10%;
+	height: 150px;
+	width: 150px;
+	
 }
 
 .box:nth-child(2) {
-  background-color: hsla(36, 87%, 58%, 1);
+  background-color: black;
+	position: absolute;
+	right: 10%;
+	height: 150px;
+	width: 150px;
 }
 
-.box:nth-child(3) {
-  background-color: hsla(32, 87%, 58%, 1);
-}
-
-.box:nth-child(4) {
-  background-color: hsla(28, 87%, 58%, 1);
-}
-
-.box:nth-child(5) {
-  background-color: hsla(24, 87%, 58%, 1);
-}
 
 ul {
   list-style: none;
@@ -78,7 +77,7 @@ ul {
 
 li {
   background-color: #eee;
-  border-radius: 2px;
+  border-radius: 20px;
   margin-bottom: 10px;
   padding: 10px;
 }
