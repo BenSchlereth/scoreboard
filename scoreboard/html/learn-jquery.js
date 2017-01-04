@@ -1,61 +1,78 @@
-// Lesson 1
-$(document).ready(function(){
+// score input and output
 
-  // BASIC SELECTORS
-  //$('#lesson-1').css('border', '4px solid red');
+//init
+var scoreHome = 0;
+var scoreGuest = 0;
+var score= 0;
 
-  // BASIC ANIMATIONS
-  // $('p').slideUp(800);
-
-  // INDEX FILTERS
-  // $('p:eq(2)').css('border', '4px solid red');
-
-  // RELATIONSHIP FILTERS
-  //$('.box:empty').css('border', '4px solid red');
-
-  // ATTRIBUTE FILTERS
-  //$('a[href$=".co.uk"]').css('border', '4px solid red');
-
-});
+$('#home').text(scoreHome);
+$('#guest').text(scoreGuest);
 
 
+//score for Home team
+document.querySelector('box1').onclick = function() 
+{
+	var score = prompt('How many points where scored?');
+	scoreHome = +scoreHome + +score;			//For adding numbers and not strings the (+) before the variable is needed
+	$('#home').text(scoreHome);
+}
 
-// Lesson 2
-$(function(){
 
-  // ATTR METHOD
-  //$('p:first').attr('class', 'not-lead');
-
-  // IMAGE SWAP
-  //$('img').attr('src', 'img2.jpg');
-  // $('img').delay(400).fadeOut(500, function(){
-  //   $(this).attr('src', 'img2.jpg').fadeIn(500);
-  // });
-
-  // CLASS METHODS
-  //$('p').toggleClass('blue').removeClass('lead');
-
-  // CONTENT METHODS
-  //$('p:first').html('<a href="google.com">link</a>');
-  // $('input').val('yo dude!');
-
-});
+//score for Guest team
+document.querySelector('box2').onclick = function() 
+{
+	var score = prompt('How many points where scored?');
+	scoreGuest = +scoreGuest + +score;	
+	$('#guest').text(scoreGuest);
+}
 
 
 
-// Lesson 3
-$(function(){
-
-  // DOM TRAVERSAL
-  // $('h2').parents('section').siblings('header').children().css('border', '4px solid red');
-
-
-  // EVENT BINDING
-  // $('html').keypress(function(){
-  //   $(this).toggleClass('blue');
-  // });
+//Counter for Quarters
+var count = 4;
+$('#quarter').text("Quarter: " + count);
+document.querySelector('h3').onclick = function() 
+{
+	if (count!=0) count--;
+	else count = 4;
+	$('#quarter').text("Quarter: " + count);
+}
 
 
-});
-0
+
+//Timer copied from http://stackoverflow.com/
+
+var mins = 15;  		//Set the number of minutes you need
+var secs = mins * 60;
+var currentSeconds = 0;
+var currentMinutes = 0;
+var bool = 1;
+
+setTimeout(Decrement,1000); 
+
+document.querySelector('h2').onclick = function() 
+{
+	if (bool != 1) bool = 1;
+	else bool = 0; 
+}
+
+function Decrement() 
+{
+document.querySelector('h2').onclick = function() 
+{
+	if (bool != 1) bool = 1;
+	else bool = 0; 
+}
+
+	if (bool != 0)
+	{        
+		currentMinutes = Math.floor(secs / 60);
+		currentSeconds = secs % 60;
+		if(currentSeconds <= 9) currentSeconds = "0" + currentSeconds;
+		secs--;
+		document.getElementById("timerText").innerHTML = currentMinutes + ":" + currentSeconds; //Set the element id you need the time put into.
+		if(secs !== -1) setTimeout('Decrement()',1000);
+	}
+}
+
 
