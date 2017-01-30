@@ -7,6 +7,11 @@
 	<h2> TIME <br>
 			 <span id="timerText"></span>
 	</h2>
+
+<?php
+echo "Hello World";
+?>
+
 </header>
 
 	<h3 id="quarter"> 
@@ -34,9 +39,8 @@
 	<link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
 
 
-	<script type="text/javascript" src="jquery.min.js"></script>
-	<script type="text/javascript" src="output.js"></script>
-	<script type="text/javascript" src="input.js"></script>
+	<script attr="" type="text/javascript" src="jquery.min.js"></script>
+	<script attr="" type="text/javascript" src="input.js"></script>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </html>
