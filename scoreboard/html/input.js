@@ -1,12 +1,9 @@
 // score input and output
 
-
-
 //init
 var scoreHome = 0;
 var scoreGuest = 0;
 var score= 0;
-
 
 $('#home').text(scoreHome);
 $('#guest').text(scoreGuest);
@@ -18,12 +15,14 @@ document.querySelector('box1').onclick = function()
 	var score = prompt('How many points where scored?');
 	scoreHome = +scoreHome + +score;			//For adding numbers and not strings the (+) before the variable is needed
 	$('#home').text(scoreHome);
-
-	//writeregister(scoreHome);
-	//if(scoreHome>9) writeregister(scoreHome/10);
-	//else writeregister(0);	 
-		
 	
+
+	$.ajax({
+	type: "POST",
+	url: "script.php",
+	data: {var1: scoreHome, var2: 1},
+	});
+
 }
 
 
@@ -83,5 +82,4 @@ document.querySelector('h2').onclick = function()
 		if(secs !== -1) setTimeout('Decrement()',1000);
 	}
 }
-
 
