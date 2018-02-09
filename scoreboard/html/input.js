@@ -10,28 +10,37 @@ $('#guest').text(scoreGuest);
 
 
 //score for Home team
-document.querySelector('box1').onclick = function() 
+document.querySelector('box1').onclick = function()
 {
 	var score = prompt('How many points where scored?');
 	scoreHome = +scoreHome + +score;			//For adding numbers and not strings the (+) before the variable is needed
 	$('#home').text(scoreHome);
-	
 
 	$.ajax({
-	type: "POST",
-	url: "script.php",
-	data: {var1: scoreHome, var2: 1},
-	});
+		type: "POST",
+		url: "script.php",
+		data: {var1:scoreHome,var2:7},		//Address = var2 should be 0b111
+		success: function(data){
+			alert(data);
+			}
+		});    																//Address should be 0b000
+
 
 }
 
 
 //score for Guest team
-document.querySelector('box2').onclick = function() 
+document.querySelector('box2').onclick = function()
 {
 	var score = prompt('How many points where scored?');
-	scoreGuest = +scoreGuest + +score;	
+	scoreGuest = +scoreGuest + +score;
 	$('#guest').text(scoreGuest);
+
+	$.ajax({
+	type: "POST",
+	url: "script.php",
+	data: {var1: scoreGuest, var2: 1},			//Address = var2 should be 0b001
+	});
 }
 
 
@@ -39,11 +48,17 @@ document.querySelector('box2').onclick = function()
 //Counter for Quarters
 var count = 4;
 $('#quarter').text("Quarter: " + count);
-document.querySelector('h3').onclick = function() 
+document.querySelector('h3').onclick = function()
 {
 	if (count!=0) count--;
 	else count = 4;
 	$('#quarter').text("Quarter: " + count);
+
+	$.ajax({
+	type: "POST",
+	url: "script.php",
+	data: {var1: count, var2: 6},				//Address = var2 should be 0b110
+	});
 }
 
 
@@ -56,24 +71,24 @@ var currentSeconds = 0;
 var currentMinutes = 0;
 var bool = 1;
 
-setTimeout(Decrement,1000); 
+setTimeout(Decrement,1000);
 
-document.querySelector('h2').onclick = function() 
+document.querySelector('h2').onclick = function()
 {
 	if (bool !== 1) bool = 1;
-	else bool = 0; 
+	else bool = 0;
 }
 
-function Decrement() 
+function Decrement()
 {
-document.querySelector('h2').onclick = function() 
+document.querySelector('h2').onclick = function()
 {
 	if (bool !== 1) bool = 1;
-	else bool = 0; 
+	else bool = 0;
 }
 
 	if (bool !== 0)
-	{        
+	{
 		currentMinutes = Math.floor(secs / 60);
 		currentSeconds = secs % 60;
 		if(currentSeconds <= 9) currentSeconds = "0" + currentSeconds;
@@ -82,4 +97,3 @@ document.querySelector('h2').onclick = function()
 		if(secs !== -1) setTimeout('Decrement()',1000);
 	}
 }
-
